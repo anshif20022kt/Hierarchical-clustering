@@ -74,5 +74,18 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ---
+📚 Technologies Used
+
+Python
+BeautifulSoup
+Pandas, NumPy
+Scikit-learn
+Streamlit
+TF-IDF Vectorization
+Hierarchical Clustering
+📬 Contact
+
+Developed by Anshif KT
+For questions or collaboration, feel free to open an issue or contact via GitHub.
 
 Let me know if you'd like a version with badges, contribution guidelines, or deployment steps for Streamlit Cloud or Hugging Face Spaces.
