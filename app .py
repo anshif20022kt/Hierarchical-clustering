@@ -12,13 +12,19 @@ import pandas as pd
 
 st.title("Job Listing Clusters")
 
-df = pd.read_csv('clustered_jobs.csv')
-clusters = df['Cluster'].unique()
+# File uploader
+uploaded_file = st.file_uploader("Upload clustered_jobs.csv", type="csv")
 
-cluster_selected = st.sidebar.multiselect("Select clusters", clusters)
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+    clusters = df['Cluster'].unique()
 
-if cluster_selected:
-    filtered = df[df['Cluster'].isin(cluster_selected)]
-    st.write(filtered)
+    cluster_selected = st.sidebar.multiselect("Select clusters", clusters)
+
+    if cluster_selected:
+        filtered = df[df['Cluster'].isin(cluster_selected)]
+        st.write(filtered)
+    else:
+        st.write(df)
 else:
-    st.write(df)
+    st.warning("Please upload the 'clustered_jobs.csv' file to continue.")
